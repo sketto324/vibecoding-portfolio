@@ -1,0 +1,210 @@
+:root {
+  --sky: #87CEEB;        /* メインカラー: 空色 */
+  --sun: #FFD93B;        /* アクセント: ひまわりイエロー */
+  --paper: #ffffff;      /* 紙の白 */
+  --paper-tint: #fafafa; /* 紙っぽい背景 */
+  --ink: #333333;        /* 文字色 */
+  --muted: #666666;
+  --frame: #d7c8a1;      /* 額縁風の色 */
+}
+
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Noto Sans JP, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+  color: var(--ink);
+  background:
+    linear-gradient(180deg, rgba(255,255,255,0.75), rgba(255,255,255,0.75)),
+    repeating-linear-gradient(0deg, var(--paper-tint), var(--paper-tint) 24px, #fff 24px, #fff 48px);
+}
+
+.container {
+  width: min(1100px, 92%);
+  margin: 0 auto;
+}
+
+.site-header {
+  padding: 56px 0 28px;
+  /* 背景画像があれば最初に合成、無ければグラデのみ */
+  background-image: var(--header-bg-image, none), linear-gradient(90deg, var(--sky), #bfe9ff);
+  background-size: cover, auto;
+  background-position: center, center;
+  border-bottom: 6px solid var(--sun);
+  position: relative;
+}
+
+.site-title {
+  margin: 0 0 8px;
+  line-height: 1.32; /* 行間をさらに少し広く */
+  color: #0b3c59;
+  text-shadow: 0 2px 0 rgba(255,255,255,0.5);
+  transition: color .2s ease;
+  text-align: left; /* 左揃え */
+}
+
+.site-title:hover { color: #083145; }
+
+.site-title .title-main {
+  display: block;
+  font-family: "M PLUS Rounded 1c", "Hiragino Maru Gothic ProN", "Yu Gothic UI", "Yu Gothic", "Hiragino Kaku Gothic ProN", "Meiryo", "Noto Sans JP", system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+  font-feature-settings: "palt" 1;
+  font-size: clamp(34px, 5.5vw, 56px);
+  font-weight: 700;
+  letter-spacing: .01em;
+}
+
+.site-title .title-sub {
+  display: block;
+  margin-top: 14px; /* 行間をさらに広げる */
+  font-size: clamp(18px, 3.6vw, 32px); /* 同程度の横幅になるよう少し小さめ */
+  font-weight: 500; /* 太字を解除 */
+  color: #0b3c59;
+  opacity: .95;
+  font-feature-settings: "palt" 1;
+  font-family: "M PLUS Rounded 1c", "Hiragino Maru Gothic ProN", "Yu Gothic UI", "Yu Gothic", "Hiragino Kaku Gothic ProN", "Meiryo", "Noto Sans JP", system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+}
+
+.site-desc {
+  margin: 0;
+  color: #143b56;
+  font-weight: 500;
+}
+
+.works-grid {
+  --column-min: 240px;
+  margin: 28px 0 64px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(var(--column-min), 1fr));
+  gap: 22px;
+}
+
+.work-card {
+  background: var(--paper);
+  border-radius: 10px;
+  padding: 14px 14px 16px;
+  box-shadow: 0 2px 0 0 rgba(0,0,0,0.06), 0 8px 24px rgba(0,0,0,0.08);
+  border: 1px solid rgba(0,0,0,0.06);
+  transition: transform .15s ease, box-shadow .2s ease;
+  position: relative; /* テープ用 */
+}
+
+.work-card:hover,
+.work-card:focus-within {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 0 0 rgba(0,0,0,0.06), 0 16px 32px rgba(0,0,0,0.14);
+}
+
+.thumb-frame {
+  border: 6px solid var(--frame);
+  outline: 2px solid #b79f6d;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #eee;
+  aspect-ratio: 3 / 2; /* 画像領域の比率を固定 */
+  box-shadow: inset 0 8px 24px rgba(0,0,0,0.12);
+}
+
+.thumb-frame img {
+  display: block;
+  inline-size: 100%;
+  block-size: 100%;
+  object-fit: cover; /* 比率を保ちつつトリミング */
+}
+
+.work-title {
+  margin: 12px 0 8px;
+  text-align: center;
+}
+
+.work-title a {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: #0f3a52;
+  background: #fff;
+  padding: 6px 10px;
+  border-radius: 6px;
+  text-decoration: none;
+  border: 1px solid rgba(0,0,0,0.1);
+  box-shadow: 0 1px 0 rgba(0,0,0,0.06);
+  transition: color .15s ease, background-color .15s ease, transform .04s ease, background-size .2s ease;
+  background-image: linear-gradient(currentColor, currentColor);
+  background-position: 0 100%;
+  background-repeat: no-repeat;
+  background-size: 0% 2px; /* 下線アニメーション */
+}
+
+.work-title a:hover {
+  color: var(--sky);
+  background-color: #fdfdfd; /* 下線用のbackground-imageを維持するため shorthand は使わない */
+}
+
+.work-title a:hover,
+.work-title a:focus-visible {
+  background-size: 100% 2px; /* 下線が伸びる */
+}
+
+.work-title a:focus-visible {
+  outline: 2px solid color-mix(in srgb, var(--sky) 70%, #083145);
+  outline-offset: 2px;
+}
+
+.work-title a:active {
+  transform: translateY(1px);
+}
+
+.work-desc {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+  text-align: center;
+}
+
+.icon-external {
+  inline-size: 16px;
+  block-size: 16px;
+  flex: 0 0 16px;
+  color: currentColor;
+}
+
+/* マスキングテープ風アクセント */
+/* マスキングテープ演出は削除（ユーザー要望） */
+
+/* スクロール時のふわっと表示 */
+.reveal { opacity: 0; transform: translateY(12px); }
+.reveal.is-visible { opacity: 1; transform: translateY(0); transition: opacity .5s ease, transform .4s ease; }
+
+/* ヘッダー下線アニメは削除（ユーザー要望） */
+
+.visually-hidden {
+  position: absolute !important;
+  height: 1px; width: 1px;
+  overflow: hidden;
+  clip: rect(1px, 1px, 1px, 1px);
+  white-space: nowrap;
+}
+
+/* Footer */
+.site-footer {
+  padding: 28px 0 40px;
+  border-top: 1px solid rgba(0,0,0,0.08);
+  background: linear-gradient(180deg, rgba(255,255,255,0.75), rgba(255,255,255,0.9));
+}
+
+.site-footer .container { display: flex; justify-content: center; }
+
+.site-footer p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+@media (max-width: 480px) {
+  .work-card { padding: 12px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { transition: none !important; }
+  .reveal { opacity: 1 !important; transform: none !important; }
+}

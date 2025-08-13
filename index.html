@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>おとなの自由研究 - ミズホのバイブコーディング作品集 -</title>
+    <meta name="description" content="バイブコーディングで制作した作品をまとめました！" />
+    <!-- 丸ゴシック（M PLUS Rounded 1c）を読み込み -->
+    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./styles.css" />
+    <style>:root{ --header-bg-image: url('assets/header-bg.png'); }</style>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container">
+        <h1 class="site-title" aria-label="おとなの自由研究 2025 — ミズホのバイブコーディング作品集">
+          <span class="title-main">おとなの自由研究 2025</span>
+          <span class="title-sub">ミズホのバイブコーディング作品集</span>
+        </h1>
+      </div>
+    </header>
+
+    <main class="container">
+      <section aria-labelledby="works-heading">
+        <h2 id="works-heading" class="visually-hidden">作品一覧</h2>
+        <div id="works-grid" class="works-grid" role="list"></div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <p class="copyright">© <span id="year"></span> sketto324</p>
+      </div>
+    </footer>
+
+    <!-- file:// で開いたときのフォールバック用データ（必要に応じて編集） -->
+    <script id="works-data" type="application/json">
+      [
+        {
+          "title": "ネコパズル",
+          "desc": "猫のパズルゲーム",
+          "url": "https://cat-pazzle.vercel.app/",
+          "thumb": "https://cat-pazzle.vercel.app/ogp_image.png"
+        },
+        {
+          "title": "Magical Happy Item",
+          "desc": "魔法のハッピーアイテム",
+          "url": "https://magical-happy-item.vercel.app/",
+          "thumb": "https://magical-happy-item.vercel.app/images/ogp-thumbnail.png"
+        },
+        {
+          "title": "行政書士タイピング",
+          "desc": "行政書士用語のタイピング練習",
+          "url": "https://gyoseisyoshi-typing.vercel.app/",
+          "thumb": "https://gyoseisyoshi-typing.vercel.app/images/screenshot.png"
+        }
+      ]
+    </script>
+    <script src="./script.js" defer></script>
+  </body>
+</html>
