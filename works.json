@@ -16,5 +16,17 @@
     "desc": "行政書士用語のタイピング練習",
     "url": "https://gyoseisyoshi-typing.vercel.app/",
     "thumb": "https://gyoseisyoshi-typing.vercel.app/images/screenshot.png"
+  },
+  {
+    "title": "Nyamber Sums",
+    "desc": "猫の足し算パズル",
+    "url": "https://nyambersums.vercel.app/",
+    "thumb": "https://nyambersums.vercel.app/images/ogp.png"
+  },
+  {
+    "title": "Rainbou Multiplication Puzzle",
+    "desc": "色で楽しく学ぶかけ算パズル",
+    "url": "https://rainbou-multiplication-puzzle.vercel.app/",
+    "thumb": "https://rainbou-multiplication-puzzle.vercel.app/images/ogp.png"
   }
 ]
