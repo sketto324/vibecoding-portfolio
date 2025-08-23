@@ -28,5 +28,11 @@
     "desc": "色で楽しく学ぶかけ算パズル",
     "url": "https://rainbou-multiplication-puzzle.vercel.app/",
     "thumb": "https://rainbou-multiplication-puzzle.vercel.app/images/ogp.png"
+  },
+  {
+    "title": "ぐるぐるおえかき",
+    "desc": "いろんな模様をえらんで、すてきなアートをつくろう！",
+    "url": "https://spirograph-ten.vercel.app/",
+    "thumb": "https://spirograph-ten.vercel.app/ogp.png"
   }
 ]
