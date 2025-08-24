@@ -34,5 +34,11 @@
     "desc": "いろんな模様をえらんで、すてきなアートをつくろう！",
     "url": "https://spirograph-ten.vercel.app/",
     "thumb": "https://spirograph-ten.vercel.app/ogp.png"
+  },
+  {
+    "title": "ねこフライト",
+    "desc": "CanvaAIで作ったねこの横スクロールアクションゲーム",
+    "url": "https://nekoflight.my.canva.site/",
+    "thumb": "https://nekoflight.my.canva.site/_assets/images/2356aa8abc9537d395b9a400830e08b8.jpg"
   }
 ]
